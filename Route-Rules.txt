@@ -64,6 +64,30 @@
 		retrive quary params
 		eg-> const query = new URLSearchParams(this.props.location.search);
 		
+		************* retriving list of quary params************
+		const query = new URLSearchParams(this.props.location.search);
+		const ingrediants= {};
+		for(let param of query.entries()){
+		    // ['salad', '1']
+		    ingrediants[param[0]] = +param[1]; // typecasting to number
+		}
+		this.setState({ingrediants:ingrediants})
+
+		check this link ***/**/**/** 
+https://stackoverflow.com/questions/29285897/what-is-the-difference-between-for-in-and-for-of-statements-in-jav/41910537#41910537
+		
+		*********************************************************
 		
 		
+		//**************************TODO ************************\\
+			{this.props.history.push({
+				  pathname: '/checkout',
+				  search: '?query=order',
+				  state: { 
+					data: this.state.ingredients,
+					price: this.state.totalPrice.
+				  }
+			 })}
+		
+		//**************check this********************************\\
 		
