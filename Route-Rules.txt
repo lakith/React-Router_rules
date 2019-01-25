@@ -45,7 +45,23 @@
 
 
 5) access quary parameters.
-	
+
+		encode quary params
+		
+			const quaryParams = [];
+			for(let i in this.state.ingrediants){
+			    console.log(i);
+			    quaryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingrediants[i]));
+			}
+
+			const quaryString = quaryParams.join('&')
+			this.props.history.push({
+			    pathname:'/checkout',
+			    search: '?' + quaryString
+			})
+		
+		
+		retrive quary params
 		eg-> const query = new URLSearchParams(this.props.location.search);
 		
 		
