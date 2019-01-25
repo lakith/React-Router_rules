@@ -1,0 +1,45 @@
+1) Only the main componets of the routes get route parameters. 
+   Child or sub components dosent recive route props.
+   But You Can pass parent route parameters to child componets as below
+	
+	* You have to Use a higer order component 
+		- import {withRouter} from 'react-router-dom'
+		
+		- export default withRouter(child);
+	  Now the cheild componets get route parametrs. 
+
+2) React route uses an regxp to match route paths.Therefore route paths like '/' will match for all routes. To avoid that
+   you can either use 'exact' inside 'Route' or you can use switch.
+	If you are using Switch it only matches a one route path. But you have to order the route paths in a proper manner.
+
+
+3) Nested Routing.
+	If you want to use nested routing inside another component, like if you want to display a post content by clicking its title
+	Under that title, You can use nested routing.
+	
+	Then you have to define that router on that component.
+	
+	eg in posts component
+		
+		class Posts extends Component {
+		
+			render(){
+				return(
+					<div> 
+						......					
+						<Route path="posts/:id" component={Post}>
+					<div>
+				)
+			}
+		
+		}
+
+4) Navigating Programmatically.
+	Then You have to pass the route path to the history prop.
+		
+	 	eg -> this.props.history.push({pathname:'/posts/'+id});
+
+
+5) access quary parameters.
+	
+		eg-> const query = new URLSearchParams(this.props.location.search);
