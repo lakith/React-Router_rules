@@ -38,8 +38,16 @@
 	Then You have to pass the route path to the history prop.
 		
 	 	eg -> this.props.history.push({pathname:'/posts/'+id});
+		
+		Also you have following methods
+			 this.props.history.goBach(); - Go back to the previous route
+			 this.props.history.replace('/checkout/content-data'); - navigate to a diffreant route
 
 
 5) access quary parameters.
 	
 		eg-> const query = new URLSearchParams(this.props.location.search);
+		
+		
+		
+		
