@@ -40,7 +40,7 @@
 	 	eg -> this.props.history.push({pathname:'/posts/'+id});
 		
 		Also you have following methods
-			 this.props.history.goBach(); - Go back to the previous route
+			 this.props.history.goBack(); - Go back to the previous route
 			 this.props.history.replace('/checkout/content-data'); - navigate to a diffreant route
 
 
